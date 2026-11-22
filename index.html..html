@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAVENTRA — независимый партнёр Stability International</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#050b1a;--navy2:#0a1630;--graph:#141b2b;--gold:#d4af6a;--gold2:#f0d79a;--ink:#f4f1ea;--mute:#9aa6bd;--line:rgba(212,175,106,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font:300 16px/1.7 'Manrope',sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:300;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 5vw;background:linear-gradient(var(--navy),rgba(5,11,26,.6));backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Unbounded';font-weight:500;letter-spacing:.35em;font-size:15px;color:var(--gold)}
+.links{display:flex;gap:26px;font-size:13px;color:var(--mute);overflow-x:auto;white-space:nowrap}
+.links a:hover{color:var(--gold2)}
+.btn{display:inline-block;padding:14px 30px;border:1px solid var(--gold);color:var(--gold);font-weight:600;font-size:14px;background:transparent;cursor:pointer;font-family:inherit;transition:.3s}
+.btn:hover,.btn.solid{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy)}
+.btn.solid:hover{filter:brightness(1.1)}
+section{padding:110px 5vw;position:relative}
+.wrap{max-width:1100px;margin:0 auto}
+h2{font-size:clamp(26px,4vw,44px);margin-bottom:18px}
+.lead{color:var(--mute);max-width:640px;margin-bottom:46px}
+/* HERO */
+#home{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:30px;padding-top:120px;overflow:hidden;background:radial-gradient(ellipse at 62% 46%,#fff 0,#f4efe4 38%,#dde5f2 80%);color:#07122b}
+#home::before{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:radial-gradient(ellipse at 62% 100%,rgba(255,226,160,.95),rgba(255,240,205,.4) 40%,transparent 70%);pointer-events:none}
+#home::after{content:"";position:absolute;left:0;right:0;bottom:17%;height:1px;background:linear-gradient(90deg,transparent,#fff 30%,#e9c880 55%,#fff 75%,transparent);box-shadow:0 0 22px 4px rgba(233,200,128,.7);pointer-events:none}
+#home>div{position:relative;z-index:1}
+h1{font-size:clamp(34px,5.4vw,70px);margin-bottom:22px;background:linear-gradient(120deg,#07122b 45%,#8a6a2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#33405e;max-width:520px;margin-bottom:34px}
+.hero .btn{color:#07122b;border-color:#07122b}
+.hero .btn:hover{background:#07122b;color:#fff}
+.hero .btn.solid{border-color:var(--gold);color:#07122b}
+.hero .btn.solid:hover{background:linear-gradient(135deg,var(--gold2),var(--gold));filter:brightness(1.08)}
+.scene{height:540px;perspective:1300px;position:relative}
+.scene::before{content:"";position:absolute;left:50%;top:46%;width:520px;height:520px;margin:-260px 0 0 -260px;background:radial-gradient(#fff 0,rgba(255,255,255,.55) 35%,transparent 68%)}
+.refl{position:absolute;left:50%;bottom:7%;width:340px;height:46px;margin-left:-170px;background:radial-gradient(ellipse,rgba(185,139,62,.5),transparent 70%);filter:blur(6px)}
+.orb{position:absolute;left:50%;top:46%;width:380px;height:380px;margin:-190px 0 0 -190px;transform-style:preserve-3d;transform:rotateX(var(--rx,-16deg)) rotateY(var(--ry,0deg));transition:transform .5s ease-out}
+.spin{position:absolute;inset:0;transform-style:preserve-3d;animation:spin 42s linear infinite;animation-name:spin,bob;animation-duration:42s,7s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite;animation-direction:normal,alternate}
+@keyframes spin{to{rotate:y 360deg}}
+@keyframes bob{from{translate:0 -10px}to{translate:0 12px}}
+.pl{position:absolute;inset:0;transform-style:preserve-3d}
+.rg{position:absolute;inset:0;border-radius:50%;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - var(--w)),#000 calc(100% - var(--w)));mask:radial-gradient(farthest-side,transparent calc(100% - var(--w)),#000 calc(100% - var(--w)));animation:rot var(--t) linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.gold{background:conic-gradient(#fff3d2,#c99a48,#f7e4b4,#8f6a2a,#fff3d2)}
+.light{background:conic-gradient(transparent 0 58%,rgba(255,255,255,0) 62%,#fff 96%,#ffe9b0 100%)}
+.navy{background:conic-gradient(#0b1d45,#35508a,#0b1d45,#1a2f63,#0b1d45)}
+.cry{position:absolute;left:50%;top:50%;width:150px;height:250px;margin:-125px 0 0 -75px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(150,185,235,.28) 48%,rgba(255,240,200,.7));border:1px solid #fff}
+.core{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#f0d79a 40%,#a9792f);box-shadow:0 0 40px 14px rgba(255,225,150,.75)}
+.orb .sh{filter:drop-shadow(0 8px 14px rgba(120,85,25,.35))}
+@media(max-width:860px){.orb{transform:rotateX(var(--rx,-16deg)) rotateY(var(--ry,0deg)) scale(.68)}.scene::before{width:380px;height:380px;margin:-190px 0 0 -190px}.scene{height:380px}}
+.plate{position:absolute;left:5vw;right:5vw;bottom:22px;font-size:12px;color:#33405e;border-top:1px solid rgba(7,18,43,.2);padding-top:12px;z-index:1}
+.plate b{color:#7a5a20}
+/* HERO VIDEO: включается сам, если рядом лежит hero.mp4 (вертикальное видео в арке) */
+.hv{position:absolute;display:none;right:9vw;top:104px;height:calc(100vh - 194px);max-height:700px;aspect-ratio:9/16;width:auto;object-fit:cover;border-radius:999px 999px 28px 28px;border:1px solid rgba(212,175,106,.75);outline:1px solid rgba(212,175,106,.35);outline-offset:12px;box-shadow:0 40px 90px rgba(7,18,43,.38);z-index:1;background:#0a1630}
+.has-video .hv{display:block}
+#home>.hov{display:none}
+.has-video .scene{visibility:hidden}
+@media(max-width:860px){
+.hv{right:0;left:0;top:0;height:100%;max-height:none;width:100%;aspect-ratio:auto;border:0;outline:0;border-radius:0;box-shadow:none;z-index:0}
+#home.has-video{align-content:end;padding-bottom:30px}
+#home.has-video>.hov{position:absolute;inset:0;display:block;background:linear-gradient(rgba(5,11,26,.15) 15%,rgba(5,11,26,.9) 85%)}
+#home.has-video::before,#home.has-video::after{display:none}
+.has-video .scene{display:none}
+.has-video h1{background:linear-gradient(120deg,#fff 45%,#f0d79a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.has-video.hero p{color:#e6ebf5}
+.has-video .btn{color:#fff;border-color:#fff}
+.has-video .btn.solid{color:#07122b;border-color:var(--gold)}
+.has-video .plate{color:#dfe5f1;border-color:rgba(255,255,255,.3)}
+.has-video .plate b{color:var(--gold2)}}
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{padding:30px 26px;background:linear-gradient(160deg,var(--graph),var(--navy2));border:1px solid var(--line);transition:.35s;position:relative}
+.card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.card h3{font-size:18px;margin-bottom:12px;color:var(--gold2)}
+.card p{font-size:14px;color:var(--mute)}
+.tag{display:inline-block;margin-top:14px;font-size:12px;color:var(--gold);border:1px solid var(--line);padding:3px 12px}
+.alt{background:var(--navy2)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.steps{counter-reset:s;display:grid;gap:16px}
+.steps div{counter-increment:s;padding:22px 24px 22px 70px;border:1px solid var(--line);position:relative;background:var(--graph)}
+.steps div:before{content:counter(s);position:absolute;left:22px;top:18px;font:500 26px 'Unbounded';color:var(--gold)}
+.steps b{display:block;color:var(--ink);font-weight:600}
+.steps span{color:var(--mute);font-size:14px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary:after{content:'+';color:var(--gold);font-size:22px;line-height:1}
+details[open] summary:after{content:'–'}
+details p{color:var(--mute);margin-top:12px;max-width:760px}
+.risk{border:1px solid var(--gold);padding:28px 30px;background:rgba(212,175,106,.06)}
+.risk h3{color:var(--gold);font-size:17px;margin-bottom:10px}
+.risk p{font-size:14px;color:var(--mute)}
+form{display:grid;gap:14px}
+input,textarea,select{width:100%;padding:14px 16px;background:var(--graph);border:1px solid var(--line);color:var(--ink);font:inherit}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);outline:none}
+.ok{display:none;color:var(--gold2);font-size:14px}
+footer{padding:50px 5vw;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
+footer p{max-width:900px;margin-top:10px}
+.rv{opacity:0;transform:translateY(24px);transition:1s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){#home,.split{grid-template-columns:1fr}.scene{height:340px}.links{display:none}section{padding:80px 6vw}.plate{position:static;margin-top:30px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#home">KAVENTRA</a>
+<div class="links"><a href="#about">О проекте</a><a href="#products">Направления</a><a href="#assets">Активы</a><a href="#eco">Экосистема</a><a href="#how">Как это работает</a><a href="#faq">Вопросы</a></div>
+<a class="btn" href="#contact">Консультация</a></nav>
+
+<section id="home" class="hero">
+<video id="hv" class="hv" src="hero.mp4" autoplay muted loop playsinline preload="auto"></video><div class="hov"></div>
+<div><h1>Недвижимость будущего: доли в реальных объектах</h1>
+<p>KAVENTRA — независимый партнёрский проект. Мы помогаем разобраться в токенизированной недвижимости платформы Stability International и честно рассказываем об условиях и рисках.</p>
+<div class="cta"><a class="btn solid" href="#contact">Получить консультацию</a><a class="btn" href="#how">Как это работает</a></div></div>
+<div class="scene" id="scene"><div class="refl"></div><div class="orb" id="orb"><div class="spin" id="spin"></div></div></div>
+<div class="plate"><b>Важно:</b> KAVENTRA не является Stability International, не владеет активами и не является лицензированным оператором. Информация о продуктах взята с официального сайта stabilityin.com.</div>
+</section>
+
+<section id="about"><div class="wrap split">
+<div class="rv"><h2>О проекте</h2><p class="lead" style="margin:0">KAVENTRA — маркетинговое название независимого партнёра. Мы не создаём собственные инвестиционные продукты: мы объясняем, как устроена платформа Stability, и сопровождаем вас на старте.</p></div>
+<div class="rv"><div class="card"><h3>О платформе Stability</h3><p>По данным компании, она работает с июня 2021 года и объединяет клиентов более чем из 60 стран. Юридическое лицо, договор и условия участия уточняйте у Stability и фиксируйте письменно.</p></div></div>
+</div></section>
+
+<section id="products" class="alt"><div class="wrap">
+<h2 class="rv">Направления и продукты</h2><p class="lead rv">Описание основано на официальном сайте Stability. Суммы входа и условия у разных источников могут отличаться, поэтому актуальные данные запрашивайте напрямую.</p>
+<div class="grid">
+<div class="card rv"><h3>Токенизированная недвижимость</h3><p>Реальный объект делится на цифровые доли — токены. Токен подтверждает вашу долю в объекте.</p></div>
+<div class="card rv"><h3>Апарт-отели и курорты</h3><p>Объекты сети: апарт-отель в Яблунице, комплекс в Микуличине, курорт на Ко Панган.</p></div>
+<div class="card rv"><h3>Аграрная недвижимость</h3><p>Направление в Грузии, регион Кахетия.</p></div>
+<div class="card rv"><h3>Отдых в объектах сети</h3><p>Участникам заявлены скидки на отдых в объектах сети. Размер и условия уточняйте у Stability.</p></div>
+</div></div></section>
+
+<section id="assets"><div class="wrap">
+<h2 class="rv">Недвижимость и реальные активы</h2><p class="lead rv">Объекты, указанные на сайте Stability. Наличие, статус и юридическая структура каждого проверяются в документах платформы.</p>
+<div class="grid">
+<div class="card rv"><h3>Украина</h3><p>Aparthotel «Mayak Yablunytsia», Mayak Chalet Resort Mykulychyn.</p><span class="tag">Апарт-отели</span></div>
+<div class="card rv"><h3>Грузия</h3><p>Объект в Цихисдзири и аграрная недвижимость в Кахетии.</p><span class="tag">Курорт · Агро</span></div>
+<div class="card rv"><h3>Таиланд</h3><p>Resort Koh Phangan.</p><span class="tag">Курорт</span></div>
+</div></div></section>
+
+<section id="eco" class="alt"><div class="wrap split">
+<div class="rv"><h2>Цифровая экосистема</h2><p class="lead" style="margin:0">Помимо объектов, Stability описывает собственную экосистему на основе блокчейн-технологий. Часть функций на их сайте отмечена как «скоро», поэтому не принимайте решение, опираясь только на планы.</p></div>
+<div class="grid rv" style="grid-template-columns:1fr 1fr">
+<div class="card"><h3>Личный кабинет</h3><p>Отслеживание портфеля и операций.</p></div>
+<div class="card"><h3>Маркетплейс</h3><p>Заявлен обмен и торговля токенами.</p></div>
+<div class="card"><h3>Обучение</h3><p>Платформа обучения и сообщество.</p></div>
+<div class="card"><h3>Поиск</h3><p>Заявлен собственный поисковый сервис.</p></div></div>
+</div></section>
+
+<section id="how"><div class="wrap split">
+<div class="rv"><h2>Как это работает</h2><p class="lead" style="margin:0">Простой путь без спешки. Решение вы принимаете только после того, как прочитали документы.</p></div>
+<div class="steps rv">
+<div><b>Консультация</b><span>Рассказываем, как устроена платформа, и отвечаем на вопросы.</span></div>
+<div><b>Проверка</b><span>Вы читаете договор, условия и документы на сайте Stability.</span></div>
+<div><b>Регистрация</b><span>Аккаунт создаётся по реферальной ссылке консультанта.</span></div>
+<div><b>Личный кабинет</b><span>Вы сами выбираете объект и следите за портфелем.</span></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2 class="rv">Преимущества работы с нами</h2>
+<div class="grid">
+<div class="card rv"><h3>Прозрачность</h3><p>Прямо говорим, кто мы, и не обещаем доход.</p></div>
+<div class="card rv"><h3>Сопровождение</h3><p>Помогаем разобраться в терминах и шагах регистрации.</p></div>
+<div class="card rv"><h3>Сообщество</h3><p>Доступ к международному сообществу участников Stability.</p></div>
+<div class="card rv"><h3>Без давления</h3><p>Никаких сроков «успей сегодня».</p></div></div>
+<div class="risk rv" style="margin-top:40px"><h3>О рисках</h3><p>Любые вложения связаны с риском, включая потерю средств. Доходность не гарантирована, прогнозы и расчёты на сайте Stability являются оценками. Вернуть средства можно только на условиях договора, чаще всего через продажу токенов. Не вкладывайте деньги, потерю которых не можете себе позволить, и по возможности проконсультируйтесь с независимым финансовым или юридическим специалистом.</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<h2 class="rv">Частые вопросы</h2>
+<details><summary>Это Stability?</summary><p>Нет. KAVENTRA — независимый партнёр. Договор вы заключаете с платформой, а не с нами.</p></details>
+<details><summary>Какая минимальная сумма?</summary><p>На официальном сайте указаны разные суммы. Актуальную цифру уточняйте у консультанта и в документах платформы.</p></details>
+<details><summary>Сколько можно заработать?</summary><p>Мы не называем цифры. Доход не гарантирован, а любые расчёты — лишь прогнозы.</p></details>
+<details><summary>Что такое токенизированная недвижимость?</summary><p>Объект делится на цифровые доли, и каждая подтверждает вашу долю в нём. Подробности и условия — в документах Stability.</p></details>
+<details><summary>Как выйти из проекта?</summary><p>По данным платформы, через продажу токенов или объекта. Условия читайте в договоре до входа.</p></details>
+</div></section>
+
+<section id="contact" class="alt"><div class="wrap split">
+<div class="rv"><h2>Контакты и заявка</h2><p class="lead" style="margin:0">Оставьте заявку, и мы ответим на ваши вопросы. Заявка ни к чему вас не обязывает.</p></div>
+<form class="rv" id="f">
+<input name="n" placeholder="Ваше имя" required>
+<input name="c" placeholder="Телефон, Telegram или e-mail" required>
+<select name="t"><option>Хочу консультацию</option><option>Вопрос по документам</option><option>Другое</option></select>
+<textarea name="m" rows="3" placeholder="Ваш вопрос"></textarea>
+<button class="btn solid" type="submit">Отправить заявку</button>
+<p class="ok" id="ok">Откроется письмо с вашей заявкой. Отправьте его, и мы свяжемся с вами.</p></form>
+</div></section>
+
+<footer><a class="logo" href="#home">KAVENTRA</a>
+<p>KAVENTRA — маркетинговое название независимого партнёра Stability International, не юридическое лицо и не оператор активов. Информация о продуктах взята с stabilityin.com и может измениться. Материалы носят информационный характер и не являются инвестиционной рекомендацией. Доходность не гарантирована.</p></footer>
+
+<script>
+// ЗАМЕНИТЕ на реальные контакты заказчика
+const CONTACT_EMAIL='info@example.com';
+const spin=document.getElementById('spin'),orb=document.getElementById('orb');
+// кольца: [rotX,rotY,масштаб,толщина,скорость,тип]
+[[90,0,1,7,60,'gold'],[0,90,.84,6,48,'gold'],[62,34,1.2,3,70,'gold'],[-58,38,.62,9,40,'gold'],[90,0,1.42,2,90,'navy'],
+ [90,0,1.04,12,9,'light'],[0,90,.88,10,12,'light'],[62,34,1.24,8,16,'light']].forEach(([x,y,k,w,t,c])=>{
+ const p=document.createElement('div');p.className='pl';p.style.transform=`rotateX(${x}deg) rotateY(${y}deg) scale(${k})`;
+ p.innerHTML=`<div class="rg ${c}${c==='gold'?' sh':''}" style="--w:${w}px;--t:${t}s"></div>`;spin.appendChild(p)});
+const cg=document.createElement('div');cg.className='pl';
+for(let i=0;i<6;i++){const f=document.createElement('div');f.className='cry';f.style.transform=`rotateY(${i*30}deg)`;cg.appendChild(f)}
+cg.insertAdjacentHTML('beforeend','<div class="core"></div>');spin.appendChild(cg);
+const sc=document.getElementById('scene');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+ sc.addEventListener('mousemove',e=>{const r=sc.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  orb.style.setProperty('--ry',x*36+'deg');orb.style.setProperty('--rx',(-16-y*22)+'deg')});
+ sc.addEventListener('mouseleave',()=>{orb.style.removeProperty('--ry');orb.style.removeProperty('--rx')})}
+const hv=document.getElementById('hv'),hm=document.getElementById('home');
+hv.addEventListener('loadeddata',()=>{hm.classList.add('has-video');if(matchMedia('(prefers-reduced-motion:reduce)').matches)hv.pause()});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target);
+const body=`Имя: ${d.get('n')}\nКонтакт: ${d.get('c')}\nТема: ${d.get('t')}\n${d.get('m')}`;
+document.getElementById('ok').style.display='block';
+location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Заявка с сайта KAVENTRA')}&body=${encodeURIComponent(body)}`});
+</script>
+</body>
+</html>
